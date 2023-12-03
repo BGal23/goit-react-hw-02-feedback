@@ -1,9 +1,8 @@
 import { Component } from 'react';
-import state from '../Feedback/state.json';
 
 export class Statistics extends Component {
   render() {
-    const { good, neutral, bad } = state;
+    const { good, neutral, bad } = this.props;
     return (
       <ul>
         <li>Good: {good}</li>
