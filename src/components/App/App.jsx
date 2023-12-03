@@ -24,14 +24,19 @@ export class App extends Component {
   };
 
   render() {
-    const { good, neutral, bad } = this.state;
+    const { good, neutral, bad, total } = this.state;
     return (
       <div>
         <Section title="Please leave feedback" />
         <FeedbackOptions buttonClick={this.handleClick} />
         <Section title="Statistics" />
         <Notification message="There is no feedback" />
-        <Statistics good={good} neutral={neutral} bad={bad} />
+        <Statistics
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={total > 0 ? total : 0}
+        />
       </div>
     );
   }
