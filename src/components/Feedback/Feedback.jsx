@@ -2,13 +2,13 @@ import { Component } from 'react';
 
 export class FeedbackOptions extends Component {
   render() {
-    const { buttonClick } = this.props;
-    return (
-      <div onClick={buttonClick}>
-        <button type="button">Good</button>
-        <button type="button">Neutral</button>
-        <button type="button">Bad</button>
-      </div>
-    );
+    const { onLeaveFeedback, options } = this.props;
+    const buttons = options.map(name => (
+      <button style={{ textTransform: 'capitalize' }} type="button" key={name}>
+        {name}
+      </button>
+    ));
+
+    return <div onClick={onLeaveFeedback}>{buttons}</div>;
   }
 }

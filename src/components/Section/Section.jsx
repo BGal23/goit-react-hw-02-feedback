@@ -1,1 +1,6 @@
-export const Section = ({ title }) => <h2>{title}</h2>;
+export const Section = ({ title, children }) => (
+  <>
+    <h2>{title}</h2>
+    {children}
+  </>
+);
